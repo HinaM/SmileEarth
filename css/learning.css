@@ -1,0 +1,687 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Serif TC', serif;
+    position: relative;
+    letter-spacing: 1px;
+}
+p::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection,
+h7::selection,
+span::selection,
+a::selection,
+li::selection,
+button::selection,
+img::selection{
+    background: lightblue;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    width: 100%;
+    background-color: #f5f5f5;
+}
+/*123*/
+.preload .loading{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.preload .loading .b{
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    margin: 10px;
+}
+.preload .loading .b.b1{
+    animation: 2s cir1 infinite;
+    animation-delay: -2s;
+    background-color: #fff;
+}
+.preload .loading .b.b2{
+    animation: 2s cir2 infinite;
+    animation-delay: -2s;
+    background-color: #e8f2f6;
+}
+.preload .loading .b.b3{
+    animation: 2s cir3 infinite;
+    animation-delay: -2s;
+    background-color: #3d5ac1;
+}
+.preload .loading .b.b4{
+    animation: 2s cir4 infinite;
+    animation-delay: -2s;
+    background-color: #bf795b;
+}
+@keyframes cir1{
+    0%{
+        margin-bottom: 80px;
+    }
+    25%{
+        margin-bottom: 0;
+    }
+    50%{
+        margin-bottom: 0;
+    }
+    100%{
+        margin-bottom: 0;
+    }
+}
+@keyframes cir2{
+    0%{
+        margin-bottom: 0;
+    }
+    25%{
+        margin-bottom: 80px;
+    }
+    50%{
+        margin-bottom: 0;
+    }
+    100%{
+        margin-bottom: 0;
+    }
+}
+@keyframes cir3{
+    0%{
+        margin-bottom: 0;
+    }
+    25%{
+        margin-bottom: 0;
+    }
+    50%{
+        margin-bottom: 80px;
+    }
+    100%{
+        margin-bottom: 0;
+    }
+}
+@keyframes cir4{
+    0%{
+        margin-bottom: 0;
+    }
+    25%{
+        margin-bottom: 0;
+    }
+    50%{
+        margin-bottom: 0;
+    }
+    100%{
+        margin-bottom: 80px;
+    }
+}
+.container{
+    width: 100%;
+    height: auto;
+}
+.container header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #fff;
+    height: 70px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.container header .logo{
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container header .logo i{
+    margin-right: 20px;
+    margin-top: 8px;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+.container header .list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.container header .list i{
+    position: absolute;
+    top: 11px;
+    left: 11px;
+}
+.container header .list input{
+    margin-top: 5px;
+    outline: none;
+    border-radius: 15px;
+    padding: 2px 12px 2px 30px;
+    margin-right: 18px;
+    border: #333 solid;
+}
+/*
+.container header .list input:focus{
+    border: #1f50fe solid;
+    box-shadow: 1px 1px #1f4ffe4b;
+}
+.container header .list input:focus + i{
+    color:#1f50fe;
+}
+*/
+.container header ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+    margin-right: 150px;
+}
+.container header ul li{
+    margin: 18px;
+    font-size: 16px;
+}
+.container header ul li a{
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+.container header ul li a:hover{
+    border-bottom: 3.5px solid;
+    color:#3d5ac1;
+}
+.container header ul li .no{
+    border-bottom: 3.5px solid;
+    color:#3d5ac1;
+}
+.container header ul li img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    object-fit: cover;
+}.container .page{
+    width: 100%;
+    height: 40vh;
+    background-image: url('https://ppt.cc/fM96Kx@.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+}
+.container .page2{
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.container .page2 .imgslider{
+    width: 100%;
+    height: 400px;
+    margin-bottom: 30px;
+}
+.container .page2 .imgslider .view{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.container .page2 .imgslider .view .imgg{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    /*transition: 0.5s;*/
+    animation-name: ani2;
+    animation-duration: 10s;
+    animation-delay: -2s;
+    animation-iteration-count: infinite;
+}
+@keyframes ani2{
+    0%{
+        transform: translateX(0);
+    }
+    33%{
+        transform: translateX(calc(-100% - 5px));
+    }
+    67%{
+        transform: translateX(calc(-200% - 10px));
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.container .page2 .imgslider .view .imgg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container .page2 .cont{
+    width: 100%;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15PX;
+    position: absolute;
+    bottom: 10px;
+}
+.container .page2 .cont span{
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 100%;
+    background-color: #3d5ac1;
+    transition: 0.5s;
+}
+.container .page2 .cont .con1{
+    animation-name: ani3;
+    animation-duration: 10s;
+    animation-delay: -2s;
+    animation-iteration-count: infinite;
+}
+.container .page2 .cont .con2{
+    animation-name: ani4;
+    animation-duration: 10s;
+    animation-delay: -2s;
+    animation-iteration-count: infinite;
+}
+.container .page2 .cont .con3{
+    animation-name: ani5;
+    animation-duration: 10s;
+    animation-delay: -2s;
+    animation-iteration-count: infinite;
+}
+@keyframes ani3{
+    0%{
+        background-color: #fff;
+        border: 3px #3d5ac1 solid;
+    }
+    33%{
+        background-color: #3d5ac1;
+    }
+    67%{
+        background-color: #3d5ac1;
+    }
+    100%{
+        background-color: #fff;
+        border: 3px #3d5ac1 solid;
+    }
+}
+@keyframes ani4{
+    0%{
+        background-color: #3d5ac1;
+    }
+    33%{
+        background-color: #fff;
+        border: 3px #3d5ac1 solid;
+    }
+    67%{
+        background-color: #3d5ac1;
+    }
+    100%{
+        background-color: #3d5ac1;
+    }
+}
+@keyframes ani5{
+    0%{
+        background-color: #3d5ac1;
+    }
+    33%{
+        background-color: #3d5ac1;
+    }
+    67%{
+        background-color: #fff;
+        border: 3px #3d5ac1 solid;
+    }
+    100%{
+        background-color: #3d5ac1;
+    }
+}
+.container .page2 .cont span.active{
+    background-color: #fff;
+    border: 3px #3d5ac1 solid;
+}
+.container .page2 .cards{
+    margin-top: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 250px;
+    white-space: nowrap;
+}
+.container .page2 .cards a{
+    text-decoration: none;
+}
+.container .page2 .cards .card{
+    display: inline-block;
+    width: 240px;
+    margin-left: 10px;
+    margin-right: 10px; 
+    height: 240px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.31);
+    transition: 0.5s;
+    cursor: pointer;
+    overflow: hidden;
+}
+.container .page2 .cards .card svg{
+    width: 100%;
+}
+.container .page2 .cards a h3{
+    text-decoration: none;
+    color: #000;
+}
+.container .page2 .cards .card svg path{
+    transition: 0.5s;
+}
+.container .page2 .cards .card:hover{
+    transform: scale(1.05);
+}
+.container .page2 .cards .card:hover .ho{
+    fill:#bf795b;
+}
+.container .page2 .cards .card .le{
+    text-align: right;
+    color: #c8c8c8;
+}
+.container .page3{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+.container .page3 .news{
+    width: calc(55% - 30px);
+}
+.container .page3 .news .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .page3 .news .title .filter{
+    width: 35px;
+    height: 35px;
+    background-color: #3d5ac1;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+.container .page3 .news .info{
+    width: 100%;
+}
+.container .page3 .news .info .infocard{
+    margin: 15px 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    border: 1px #949494 solid;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.container .page3 .news .info .infocard img{
+    width: 30%;
+    object-fit: cover;
+}
+.container .page3 .news .info .infocard .font{
+    width: 70%;
+    padding: 15px;
+}
+.container .page3 .news .info .infocard .font p{
+    color: #858585;
+}
+.container .page3 .news .info .infocard .font .mo a{
+    color: #3d5ac1;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.container .page3 .news .info .infocard .font .mo a:hover{
+    text-decoration: underline;
+}
+.container .page3 .news .info .infocard .fav{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 25px;
+    
+}
+.container .page3 .news .info .infocard .fav input[type="checkbox"]{
+    display: none;
+}
+.container .page3 .news .info .infocard .fav span{
+    cursor: pointer;
+    transition: 0.3s;
+    color: #dfe0e0df;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+}
+.container .page3 .news .info .infocard .fav input[type="checkbox"]:checked ~ span{
+    color: #ff295d;
+}
+.container .page3 .news .chhh{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.container .page3 .news .chhh i{
+    color: #3d5ac1;
+    font-size: 18px;
+    cursor: pointer;
+}
+.container .page3 .news .chh{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .page3 .news .chh .ch{
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #3d5ac1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+}
+.container .page3 .news .chh .ch.n{
+    color: #333;
+    background-color: #fff;
+    cursor: default;
+}
+.container .page3 .news .chh .ch.p{
+    background-color: #bf795b;
+}
+.container .page3 .check{
+    width: 15%;
+    border: 1px #949494 solid;
+    border-radius: 1rem;
+    height: fit-content;
+    margin-left: 30px;
+    padding: 10px;
+}
+.container .page3 .check .checks{
+    border-bottom: 1px #949494 solid;
+    padding: 0 0 10px 0;
+}
+.container .page3 .check .checks.s{
+    border-bottom: none;
+}
+.container .page3 .check .checks p{
+    display: inline-block;
+    border: 1px #949494 solid;
+    color:#949494;
+    border-radius: 5px;
+    padding: 2px 3px;
+    margin: 3px;
+    cursor: pointer;
+}
+.container .modal{
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background-color: #c6c6c655;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+.container .modal.active{
+    top: 0;
+}
+.container .modal .modal_root{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    width: 25%;
+    background-color: #fff;
+    height: fit-content;
+}
+.container .modal .modal_root input[type="text"]{
+    width: 100%;
+    outline: none;
+    border-radius: 1rem;
+    padding: 2px 12px 2px 35px;
+    margin-bottom: 10px;
+}
+.container .modal .modal_root label input[type="checkbox"]{
+    display: none;
+}
+.container .modal .modal_root label span{
+    color: #949494;
+    font-size: 14px;
+    border:1px #949494 solid;
+    border-radius: 5px;
+    padding: 2px 6px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.container .modal .modal_root label input[type="checkbox"]:checked ~ span{
+    color: #fff;
+    background-color: #3d5ac1;
+    border:1px #3d5ac1 solid;
+}
+.container .modal .modal_root .fo{
+    padding: 15px;
+}
+.container .modal .modal_root .fo .se i{
+    position: absolute;
+    top: 6px;
+    left:12px;
+}
+.container .modal .modal_root .gogo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .modal .modal_root .gogo .no{
+    border-bottom-left-radius: 1rem;
+    text-align: center;
+    width: 50%;
+    background-color: #c6c6c6;
+    padding: 15px 0;
+    cursor: pointer;
+}
+.container .modal .modal_root .gogo .no.go{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 1rem;
+    background-color: #3d5ac1;
+    color:#fff
+}
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: #343d5a;
+    padding: 20px;
+}
+.footer .logo{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.footer .aboutus{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    color: #fff;
+    border-top: 1px rgba(255, 255, 255, 0.459) solid;
+    border-bottom: 1px rgba(255, 255, 255, 0.459) solid;
+    padding: 25px;
+}
+.footer .aboutus p{
+    margin: 10px;
+}
+.footer .aboutus .ti{
+    font-size: 25px;
+}
+.footer .cop{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 300;
+}
+#myBtn{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 25px;
+    background-color: #bf795b;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.31);
+}
+#myBtn a{
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+#myBtn a i{
+    line-height: 60px;
+}
+

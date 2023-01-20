@@ -108,9 +108,12 @@
                         <div class="joinin">
                             <p>名額：<span style="color:#d40f0f;">95</span>/100</p>
                         </div>
-                        <div class="joinbar" onclick="myfu123456();" id="joinbar">
-                            <p id="joinbarword">立即報名</p>
+                        <div id="joinbardiv">
+                            <div class="joinbar" onclick="myfu123456();" id="joinbar">
+                                <p>立即報名</p>
+                            </div>
                         </div>
+                        
                         <!--
                         <div class="joinbar full">
                             <p>名額已滿</p>
@@ -327,7 +330,7 @@
     });
 
     var modal2 = document.getElementById("modal2");
-    var joinbar =document.getElementById("joinbar");
+    var joinbardiv =document.getElementById("joinbardiv");
     function myfu123456(){
         modal2.classList.add("active");
     }
@@ -335,8 +338,7 @@
         modal2.classList.remove("active");
     }
     function join(){
-        joinbar.classList.add("ok");
-        document.getElementById("joinbarword").textContent="報名完成，請注意email通知！";
+        joinbardiv.innerHTML = "<div class='joinbar ok'><p>報名完成，請注意email通知！</p></div>";
     }
 </script>
 </html>

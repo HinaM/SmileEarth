@@ -94,14 +94,16 @@
                         </div>
                         <div class="shaa">
                             <label>
-                                <input type="checkbox">
+                                <input id="counterspan" type="checkbox" onclick="isCheck();">
                                 <span>
                                     <div class="ico fav">
                                         <i class="fa-solid fa-heart"></i>
                                     </div>
                                 </span>
                             </label>
-                            <p>100</p>
+                            <div id="counter">
+                                <p>100</p>
+                            </div>
                         </div>
                     </div>
                     <div class="join">
@@ -339,6 +341,17 @@
     }
     function join(){
         joinbardiv.innerHTML = "<div class='joinbar ok'><p>報名完成，請注意email通知！</p></div>";
+    }
+
+    var counter = document.getElementById("counter");
+    var counterspan = document.getElementById("counterspan");
+
+    function isCheck(){
+        if (counterspan.checked){
+            counter.innerHTML = "<p>101</p>";
+        }else{
+            counter.innerHTML = "<p>100</p>";
+        }
     }
 </script>
 </html>

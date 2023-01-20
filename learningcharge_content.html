@@ -94,14 +94,16 @@
                         </div>
                         <div class="shaa">
                             <label>
-                                <input type="checkbox">
+                                <input id="counterspan" type="checkbox" onclick="isCheck();">
                                 <span>
                                     <div class="ico fav">
                                         <i class="fa-solid fa-heart"></i>
                                     </div>
                                 </span>
                             </label>
-                            <p>100</p>
+                            <div id="counter">
+                                <p>100</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -293,5 +295,13 @@
     btnCopy1.addEventListener('click', function(){
         copyText(inputText)
     });
+
+    function isCheck(){
+        if (counterspan.checked){
+            counter.innerHTML = "<p>101</p>";
+        }else{
+            counter.innerHTML = "<p>100</p>";
+        }
+    }
 </script>
 </html>

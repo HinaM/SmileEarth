@@ -246,6 +246,14 @@ body{
     animation-delay: -2s;
     animation-iteration-count: infinite;
 }
+.container .page .mor a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #000;
+}
 .container .page .mor i{
     font-size: 50px;
 }

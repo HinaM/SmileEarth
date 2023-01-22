@@ -485,6 +485,7 @@ body{
     top: 10px;
     left: 10px;
     color:#fff;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .container .page2 .infocard .infocards .top.new{
     padding: 2px 10px;

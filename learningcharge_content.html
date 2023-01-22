@@ -295,12 +295,16 @@
     btnCopy1.addEventListener('click', function(){
         copyText(inputText)
     });
+    
 
+    let counternum = 100;
     function isCheck(){
         if (counterspan.checked){
-            counter.innerHTML = "<p>101</p>";
+            counternum+=1;
+            counter.innerHTML = "<p>"+counternum+"</p>";
         }else{
-            counter.innerHTML = "<p>100</p>";
+            counternum-=1;
+            counter.innerHTML = "<p>"+counternum+"</p>";
         }
     }
 </script>

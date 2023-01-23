@@ -143,6 +143,24 @@ body{
     justify-content: center;
     flex-direction: row;
 }
+.container header .input{
+    display: flex;
+    margin: 0 auto;
+}
+.container header .input input{
+    margin-top: 5px;
+    outline: none;
+    border-radius: 15px;
+    padding: 2px 12px 2px 30px;
+    border:1px #333 solid;
+    width: 450px;
+}
+.container header .input i{
+    position: absolute;
+    top: 10px;
+    left: 11px;
+}
+/*
 .container header .list i{
     position: absolute;
     top: 11px;
@@ -156,6 +174,7 @@ body{
     margin-right: 18px;
     border: #333 solid;
 }
+*/
 .container header ul{
     display: flex;
     align-items: center;

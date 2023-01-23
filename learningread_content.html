@@ -108,7 +108,7 @@
                     </div>
                     <div class="join">
                         <div class="joinin">
-                            <p>名額：<span style="color:#d40f0f;">95</span>/100</p>
+                            <p>名額：<span style="color:#d40f0f;" id="joinpeo">95</span>/100</p>
                         </div>
                         <div id="joinbardiv">
                             <div class="joinbar" onclick="myfu123456();" id="joinbar">
@@ -333,6 +333,8 @@
 
     var modal2 = document.getElementById("modal2");
     var joinbardiv =document.getElementById("joinbardiv");
+    let joinpeo = document.getElementById("joinpeo");
+    let joinpeonum = 95;
     function myfu123456(){
         modal2.classList.add("active");
     }
@@ -341,6 +343,8 @@
     }
     function join(){
         joinbardiv.innerHTML = "<div class='joinbar ok'><p>報名完成，請注意email通知！</p></div>";
+        joinpeonum-=1;
+        joinpeo.innerHTML=joinpeonum;
     }
 
     var counter = document.getElementById("counter");

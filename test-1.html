@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/test.css">
+    <link rel="stylesheet" href="./css/test-1.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9d0690b173.js" crossorigin="anonymous"></script>
     <title>SmileEarth永續履歷</title>
@@ -48,16 +48,34 @@
             <img src="./img/Vector-12.png" alt="" class="v12">
             <img src="./img/Vector 54.png" alt="" class="v54">
             <img src="./img/Vector 55.png" alt="" class="v55">
+            <img src="./img/Lifesavers Caretaking.png" alt="" class="lc">
             <div class="context">
-                <img src="./img/Lifesavers Caretaking.png" alt="">
-                <div class="tex">
-                    <h1>歡迎來到ESG學習測驗</h1>
-                    <h3>本測驗將能檢測您對永續ESG的了解程度</br>通過測驗將能升級成等級二！</h3>
-                    <div class="go">
-                        <p>上次測驗分數：查無測驗成績</p>
-                        <p>測驗結果：未通過</p>
-                        <input type="button" value="開始測驗" onclick="location.href='./test-1.html'">
-                    </div>
+                <div class="ti">
+                    <p class="mark">分數：0</br>答對題數：0</p>
+                    <h3><span>單選題</span>第一題：永續發展ESG中的「E」是什麼？</h3>
+                </div>
+                <div class="rad">
+                    <label for="1">
+                        <input type="radio" id="1" name="drone">
+                        <span>A 環境</span>
+                    </label>
+                    <label for="3">
+                        <input type="radio" id="3" name="drone">
+                        <span>C 社會責任</span>
+                    </label>
+                </div>
+                <div class="rad">
+                    <label for="2">
+                        <input type="radio" id="2" name="drone">
+                        <span>B 企業</span>
+                    </label>
+                    <label for="4">
+                        <input type="radio" id="4" name="drone">
+                        <span>D 公司治理</span>
+                    </label>
+                </div>
+                <div onclick="markans();" class="sub">
+                    <p>確定答案</p>
                 </div>
             </div>
         </div>
@@ -123,6 +141,13 @@
     window.addEventListener('load',function(){
         preload.style.display = "none";
     })
-    
+    let mark = document.getElementById("4");
+    function markans(){
+        if (mark.checked == true){
+            console.log("y");
+        }else{
+            console.log("no");
+        }
+    }
 </script>
 </html>

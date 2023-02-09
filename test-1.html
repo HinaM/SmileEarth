@@ -49,37 +49,171 @@
             <img src="./img/Vector 54.png" alt="" class="v54">
             <img src="./img/Vector 55.png" alt="" class="v55">
             <img src="./img/Lifesavers Caretaking.png" alt="" class="lc">
+
             <div class="context">
                 <div class="ti">
-                    <p class="mark">分數：0</br>答對題數：0</p>
-                    <h3><span>單選題</span>第一題：永續發展ESG中的「E」是什麼？</h3>
+                    <div class="mark">
+                        <p>分數：<span id="score">0</span></br>答對題數：<span id="count">0</span></p>
+                    </div>
+                    <div class="topic" id="topic">
+                        <h3><span id="bar">單選題</span>第一題：永續發展ESG中的「E」是什麼？</h3>
+                    </div>
                 </div>
-                <div class="rad">
-                    <label for="1">
-                        <input type="radio" id="1" name="drone">
-                        <span>A 環境</span>
-                    </label>
-                    <label for="3">
-                        <input type="radio" id="3" name="drone">
-                        <span>C 社會責任</span>
-                    </label>
+                <!--問題集-->
+                <div id="ques">
+                    <div class="rad">
+                        <label for="1">
+                            <input type="radio" id="1" name="drone">
+                            <span>A 環境</span>
+                        </label>
+                        <label for="3">
+                            <input type="radio" id="3" name="drone">
+                            <span>C 社會責任</span>
+                        </label>
+                    </div>
+                    <div class="rad">
+                        <label for="2">
+                            <input type="radio" id="2" name="drone">
+                            <span>B 企業</span>
+                        </label>
+                        <label for="4">
+                            <input type="radio" id="4" name="drone">
+                            <span>D 公司治理</span>
+                        </label>
+                    </div>
+                    <div onclick="markans();" class="sub">
+                        <p>確定答案</p>
+                    </div>
                 </div>
-                <div class="rad">
-                    <label for="2">
-                        <input type="radio" id="2" name="drone">
-                        <span>B 企業</span>
-                    </label>
-                    <label for="4">
-                        <input type="radio" id="4" name="drone">
-                        <span>D 公司治理</span>
-                    </label>
+                <!--正確-->
+                <div id="ans" class="ans">
+                    <p>恭喜，您答對了！</p>
+                    <p>「E」代表Environment，是環境的意思！</p>
+                    <svg width="250" height="180" viewBox="0 0 414 343" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="171.486" cy="171.495" r="142" transform="rotate(13.4905 171.486 171.495)" fill="#4DF2A3"/>
+                        <path d="M92.9862 72.6596C71.7533 89.6679 55.8006 113.599 48.9627 142.101C32.6001 210.306 74.6266 278.862 142.832 295.224C211.036 311.587 279.592 269.56 295.955 201.356C312.317 133.151 270.291 64.5952 202.086 48.2326C180.535 43.0625 158.949 43.7218 138.986 49.1944" stroke="black" stroke-width="5"/>
+                        <path d="M109.659 133.01L146.475 155.726C130.829 153.582 99.2064 155.855 89.8429 156.023" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M244.044 165.25L200.813 169.276C215.715 174.521 242.782 191.238 251.03 195.721" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M130.328 191.444C144.034 198.377 184 209 199.5 209C197.385 256.256 111.296 232.339 130.328 191.444Z" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M327.727 103.722C339.586 111.447 347.651 141.658 350.201 155.798L349.632 167.805C348.096 173.146 360.038 186.489 366.201 192.493C377.426 188.618 401.301 178.342 406.993 168.234C414.109 155.601 391.434 116.986 386.58 116.152C382.698 115.485 368.487 121.423 361.867 124.475L356.123 109.94C339.068 84.9633 330.086 95.3878 327.727 103.722Z" fill="#4DF2A3"/>
+                        <path d="M350.201 155.798C347.651 141.658 339.586 111.447 327.727 103.722C330.086 95.3878 339.068 84.9633 356.123 109.94L361.867 124.475M361.867 124.475C368.487 121.423 382.698 115.485 386.58 116.152C391.434 116.986 414.109 155.601 406.993 168.234C401.301 178.342 377.426 188.618 366.201 192.493C360.038 186.489 348.096 173.146 349.632 167.805M361.867 124.475C356.519 128.318 349.897 141.305 366.201 162.505C375.429 174.505 388.18 168.838 398.014 165.005" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                    <div class="sub" onclick="ok();">
+                        <p>進入下題</p>
+                    </div>
                 </div>
-                <div onclick="markans();" class="sub">
-                    <p>確定答案</p>
+                <!--錯誤-->
+                <div id="anserr" class="anserr">
+                    <p>「E」代表Environment，是環境的意思！</p>
+                    <svg width="250" height="180" viewBox="0 0 342 314" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="170.963" cy="143" r="142" transform="rotate(-13.4905 170.963 143)" fill="#E88282"/>
+                        <path d="M156.751 183.607L173.251 167.107L189.751 183.607" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M71.572 65.2042C54.8927 86.6966 44.9629 113.689 44.9629 143C44.9629 213.14 101.823 270 171.963 270C242.103 270 298.963 213.14 298.963 143C298.963 72.8598 242.103 16 171.963 16C149.801 16 128.964 21.6767 110.829 31.6554" stroke="black" stroke-width="5"/>
+                        <path d="M125.003 152.077C120.648 158.511 114.15 171.829 122.993 173.629C134.047 175.877 127.65 158.519 125.003 152.077Z" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <circle cx="126.251" cy="142.607" r="10" fill="black"/>
+                        <circle cx="219.251" cy="142.607" r="10" fill="black"/>
+                    </svg>
+                    <div class="sub" onclick="nook();">
+                        <p>進入下題</p>
+                    </div>
+                </div>   
+                <!--通過-->
+                <div class="contex" id="contex">
+                    <svg width="300" height="300" viewBox="0 0 414 343" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="171.486" cy="171.495" r="142" transform="rotate(13.4905 171.486 171.495)" fill="#4DF2A3"/>
+                        <path d="M92.9862 72.6596C71.7533 89.6679 55.8006 113.599 48.9627 142.101C32.6001 210.306 74.6266 278.862 142.832 295.224C211.036 311.587 279.592 269.56 295.955 201.356C312.317 133.151 270.291 64.5952 202.086 48.2326C180.535 43.0625 158.949 43.7218 138.986 49.1944" stroke="black" stroke-width="5"/>
+                        <path d="M109.659 133.01L146.475 155.726C130.829 153.582 99.2064 155.855 89.8429 156.023" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M244.044 165.25L200.813 169.276C215.715 174.521 242.782 191.238 251.03 195.721" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M130.328 191.444C144.034 198.377 184 209 199.5 209C197.385 256.256 111.296 232.339 130.328 191.444Z" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M327.727 103.722C339.586 111.447 347.651 141.658 350.201 155.798L349.632 167.805C348.096 173.146 360.038 186.489 366.201 192.493C377.426 188.618 401.301 178.342 406.993 168.234C414.109 155.601 391.434 116.986 386.58 116.152C382.698 115.485 368.487 121.423 361.867 124.475L356.123 109.94C339.068 84.9633 330.086 95.3878 327.727 103.722Z" fill="#4DF2A3"/>
+                        <path d="M350.201 155.798C347.651 141.658 339.586 111.447 327.727 103.722C330.086 95.3878 339.068 84.9633 356.123 109.94L361.867 124.475M361.867 124.475C368.487 121.423 382.698 115.485 386.58 116.152C391.434 116.986 414.109 155.601 406.993 168.234C401.301 178.342 377.426 188.618 366.201 192.493C360.038 186.489 348.096 173.146 349.632 167.805M361.867 124.475C356.519 128.318 349.897 141.305 366.201 162.505C375.429 174.505 388.18 168.838 398.014 165.005" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                    <div class="sele">
+                        <a href="./test.html" class="back"><p>重新測驗</p></a>
+                        <a href="./index.html"><p>回到首頁</p></a>
+                    </div>
+                </div>
+                <!--未通過-->
+                <div class="contex" id="contexerr">
+                    <svg width="300" height="300" viewBox="0 0 342 314" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="170.963" cy="143" r="142" transform="rotate(-13.4905 170.963 143)" fill="#E88282"/>
+                        <path d="M156.751 183.607L173.251 167.107L189.751 183.607" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M71.572 65.2042C54.8927 86.6966 44.9629 113.689 44.9629 143C44.9629 213.14 101.823 270 171.963 270C242.103 270 298.963 213.14 298.963 143C298.963 72.8598 242.103 16 171.963 16C149.801 16 128.964 21.6767 110.829 31.6554" stroke="black" stroke-width="5"/>
+                        <path d="M125.003 152.077C120.648 158.511 114.15 171.829 122.993 173.629C134.047 175.877 127.65 158.519 125.003 152.077Z" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <circle cx="126.251" cy="142.607" r="10" fill="black"/>
+                        <circle cx="219.251" cy="142.607" r="10" fill="black"/>
+                    </svg>
+                    <div class="sele">
+                        <a href="./test.html" class="back"><p>重新測驗</p></a>
+                        <a href="./index.html"><p>回到首頁</p></a>
+                    </div>
+                </div>               
+            </div>
+            
+        </div>
+            <!--
+                <div class="ti">
+                    <p class="mark">分數：<span id="score">0</span></br>答對題數：<span id="count">0</span></p>
+                    <h3><span id="bar">單選題</span>第一題：永續發展ESG中的「E」是什麼？</h3>
+                </div>
+                
+                <div id="ans" class="ans">
+                    <p>恭喜，您答對了！</p>
+                    <p>「E」代表Environment，是環境的意思！</p>
+                    <svg width="250" height="180" viewBox="0 0 414 343" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="171.486" cy="171.495" r="142" transform="rotate(13.4905 171.486 171.495)" fill="#4DF2A3"/>
+                        <path d="M92.9862 72.6596C71.7533 89.6679 55.8006 113.599 48.9627 142.101C32.6001 210.306 74.6266 278.862 142.832 295.224C211.036 311.587 279.592 269.56 295.955 201.356C312.317 133.151 270.291 64.5952 202.086 48.2326C180.535 43.0625 158.949 43.7218 138.986 49.1944" stroke="black" stroke-width="5"/>
+                        <path d="M109.659 133.01L146.475 155.726C130.829 153.582 99.2064 155.855 89.8429 156.023" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M244.044 165.25L200.813 169.276C215.715 174.521 242.782 191.238 251.03 195.721" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M130.328 191.444C144.034 198.377 184 209 199.5 209C197.385 256.256 111.296 232.339 130.328 191.444Z" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M327.727 103.722C339.586 111.447 347.651 141.658 350.201 155.798L349.632 167.805C348.096 173.146 360.038 186.489 366.201 192.493C377.426 188.618 401.301 178.342 406.993 168.234C414.109 155.601 391.434 116.986 386.58 116.152C382.698 115.485 368.487 121.423 361.867 124.475L356.123 109.94C339.068 84.9633 330.086 95.3878 327.727 103.722Z" fill="#4DF2A3"/>
+                        <path d="M350.201 155.798C347.651 141.658 339.586 111.447 327.727 103.722C330.086 95.3878 339.068 84.9633 356.123 109.94L361.867 124.475M361.867 124.475C368.487 121.423 382.698 115.485 386.58 116.152C391.434 116.986 414.109 155.601 406.993 168.234C401.301 178.342 377.426 188.618 366.201 192.493C360.038 186.489 348.096 173.146 349.632 167.805M361.867 124.475C356.519 128.318 349.897 141.305 366.201 162.505C375.429 174.505 388.18 168.838 398.014 165.005" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                    <div class="sub" onclick="ok();">
+                        <p>進入下題</p>
+                    </div>
+                </div>
+                <div id="anserr" class="anserr">
+                    <p>「E」代表Environment，是環境的意思！</p>
+                    <svg width="250" height="180" viewBox="0 0 342 314" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="170.963" cy="143" r="142" transform="rotate(-13.4905 170.963 143)" fill="#E88282"/>
+                        <path d="M156.751 183.607L173.251 167.107L189.751 183.607" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M71.572 65.2042C54.8927 86.6966 44.9629 113.689 44.9629 143C44.9629 213.14 101.823 270 171.963 270C242.103 270 298.963 213.14 298.963 143C298.963 72.8598 242.103 16 171.963 16C149.801 16 128.964 21.6767 110.829 31.6554" stroke="black" stroke-width="5"/>
+                        <path d="M125.003 152.077C120.648 158.511 114.15 171.829 122.993 173.629C134.047 175.877 127.65 158.519 125.003 152.077Z" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                        <circle cx="126.251" cy="142.607" r="10" fill="black"/>
+                        <circle cx="219.251" cy="142.607" r="10" fill="black"/>
+                    </svg>
+                    <div class="sub" onclick="ok();">
+                        <p>進入下題</p>
+                    </div>
+                </div>
+            
+            -->
+            <!--
+            <div class="ti">
+                <p class="mark">分數：100</br>答對題數：10</p>
+                <div>
+                    <h1>恭喜您通過ESG學習測驗！</h1>
+                    <p>太棒了！您已經通過重重考驗，並擁有升到等級二的資格！</p>
                 </div>
             </div>
-        </div>
-        
+            <div class="contex">
+                <svg width="300" height="300" viewBox="0 0 414 343" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="171.486" cy="171.495" r="142" transform="rotate(13.4905 171.486 171.495)" fill="#4DF2A3"/>
+                    <path d="M92.9862 72.6596C71.7533 89.6679 55.8006 113.599 48.9627 142.101C32.6001 210.306 74.6266 278.862 142.832 295.224C211.036 311.587 279.592 269.56 295.955 201.356C312.317 133.151 270.291 64.5952 202.086 48.2326C180.535 43.0625 158.949 43.7218 138.986 49.1944" stroke="black" stroke-width="5"/>
+                    <path d="M109.659 133.01L146.475 155.726C130.829 153.582 99.2064 155.855 89.8429 156.023" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M244.044 165.25L200.813 169.276C215.715 174.521 242.782 191.238 251.03 195.721" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M130.328 191.444C144.034 198.377 184 209 199.5 209C197.385 256.256 111.296 232.339 130.328 191.444Z" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M327.727 103.722C339.586 111.447 347.651 141.658 350.201 155.798L349.632 167.805C348.096 173.146 360.038 186.489 366.201 192.493C377.426 188.618 401.301 178.342 406.993 168.234C414.109 155.601 391.434 116.986 386.58 116.152C382.698 115.485 368.487 121.423 361.867 124.475L356.123 109.94C339.068 84.9633 330.086 95.3878 327.727 103.722Z" fill="#4DF2A3"/>
+                    <path d="M350.201 155.798C347.651 141.658 339.586 111.447 327.727 103.722C330.086 95.3878 339.068 84.9633 356.123 109.94L361.867 124.475M361.867 124.475C368.487 121.423 382.698 115.485 386.58 116.152C391.434 116.986 414.109 155.601 406.993 168.234C401.301 178.342 377.426 188.618 366.201 192.493C360.038 186.489 348.096 173.146 349.632 167.805M361.867 124.475C356.519 128.318 349.897 141.305 366.201 162.505C375.429 174.505 388.18 168.838 398.014 165.005" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <div class="sele">
+                    <a href="./test.html"><p>重新測驗</p></a>
+                    <a href="./index.html"><p>回到首頁</p></a>
+                </div>
+            </div>
+        -->
+            
         <div class="footer">
             <div class="logo">             
                 <svg width="250" height="35" viewBox="0 0 298 39" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,13 +275,42 @@
     window.addEventListener('load',function(){
         preload.style.display = "none";
     })
-    let mark = document.getElementById("4");
+    let mark = document.getElementById("1");
+    let score = document.getElementById("score");
+    let count = document.getElementById("count");
+    let ques = document.getElementById("ques");
+    let ans = document.getElementById("ans");
+    let anserr = document.getElementById("anserr");
+    let topic = document.getElementById("topic");
+    let contex = document.getElementById("contex");
+    let contexerr = document.getElementById("contexerr");
+
     function markans(){
         if (mark.checked == true){
-            console.log("y");
+            score.innerHTML = "10";
+            count.innerHTML = "1";
+            ques.style.display = "none";
+            ans.style.display = "flex";
         }else{
-            console.log("no");
+            ques.style.display = "none";
+            anserr.style.display = "flex";
         }
+    }
+    
+    function ok(){
+        ques.style.display = "none";
+        anserr.style.display = "none";
+        ans.style.display = "none";
+        contex.style.display = "flex";
+        topic.innerHTML = "<h1>恭喜您通過ESG測驗</h1><p>太棒了！您已經通過重重考驗，並擁有升到等級二的資格！</p>";
+    }
+    function nook(){
+        ques.style.display = "none";
+        anserr.style.display = "none";
+        ans.style.display = "none";
+        contex.style.display = "none";
+        contexerr.style.display = "flex";
+        topic.innerHTML = "<h1>再接再厲</h1><p>您未通過ESG學習測驗，多多複習題目，然後再次挑戰吧！</p>";
     }
 </script>
 </html>

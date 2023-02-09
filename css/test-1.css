@@ -244,22 +244,138 @@ body{
     position: absolute;
     top: 50px;
     width: 10%;
-    left: 35%;
+    right: 8%;
 }
 .container .page .v54{
     position: absolute;
     top: 35px;
     width: 10%;
-    left: 36%;
+    right: 7%;
 }
+
 .container .page .context{
     width: 75%;
     margin-left: auto;
     margin-right: auto;
     height: 90vh;
     color: #343d5a;
-    padding: 150px;
+    padding: 100px 150px;
 }
+.container .page .context .ti{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.container .page .context .ti .mark{
+    width: 20%;
+}
+.container .page .context .ti .mark p{
+    display: inline-block;
+    background-color: #f4d35e;
+    padding:3px 15px;
+    border-radius:1rem;
+}
+.container .page .context .ti .topic{
+    width: 80%;
+}
+#bar{
+    background-color: #f95738;
+    color: #fff;
+    font-size: 10px;
+    padding: 3px 15px;
+    border-radius:1rem;
+    margin-right: 5px;
+    font-weight: 500;
+}
+.container .page .context .rad{
+    display: flex;
+    justify-content: space-between;
+}
+.container .page .context .rad span:hover{
+    background-color: #ee964b;
+}
+.container .page .context .rad input[type="radio"]:checked ~ span{
+    background-color: #ee964b;
+}
+.container .page .context .rad label{
+    margin-top: 50px;
+    width: 100%;
+}
+.container .page .context .rad span{
+    background-color: #fff;
+    border: 3px #ee964b solid;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+    height: 60px;
+    text-align: center;
+    transition: 0.5s;
+}
+.container .page .context .rad input[type="radio"]{
+    display: none;
+}
+.container .page .context .sub{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f95738;
+    margin-top: 80px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 2rem;
+}
+.container .page .context .ans,
+.container .page .context .anserr{
+    width: 100%;
+    margin-top: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container .page .context .ans .sub,
+.container .page .context .anserr .sub{
+    margin-top: 20px;
+}
+.container .page .context .anserr svg{
+    margin-top: 20px;
+}
+.container .page .context .contex{
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: column;
+}
+.container .page .context .contex .sele{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .page .context .contex .sele a{
+    text-decoration: none;
+    color: #000;
+    background-color: #ffffff;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding: 15px 60px;
+    border-radius: 2rem;
+}
+.container .page .context .contex .sele .back{
+    background-color: #f95738;
+    color: #fff;
+}
+/*
 .container .page .context .ti{
     width: 100%;
     display: flex;
@@ -271,7 +387,7 @@ body{
     border-radius:1rem;
     margin-right:50px;
 }
-.container .page .context .ti span{
+#bar{
     background-color: #f95738;
     color: #fff;
     font-size: 10px;
@@ -321,6 +437,51 @@ body{
     padding: 15px;
     border-radius: 2rem;
 }
+.container .page .context .ans,
+.container .page .context .anserr{
+    margin-top: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container .page .context .ans svg,
+.container .page .context .anserr svg{
+    margin-top: 15px;
+}
+.container .page .context .ans .sub,
+.container .page .context .anserr .sub{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f95738;
+    margin-top: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 2rem;
+}
+.container .page .contex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: column;
+}
+.container .page .contex .sele{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .page .contex .sele a{
+    text-decoration: none;
+    margin: 0 120px;
+}
+*/
 .footer{
     width: 100%;
     height: auto;

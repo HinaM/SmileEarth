@@ -132,7 +132,7 @@ body{
     background-color: #fff;
     height: 70px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    
 }
 .container header .logo{
     margin-left: 150px;
@@ -222,7 +222,39 @@ body{
     height: 40px;
     border-radius: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
+
+.container header ul li .downdropc{
+    width: 300%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 100;
+    padding: 15px 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.31);
+    border-radius: 1rem;
+}
+.container header ul li .downdropc a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 4px 0;
+}
+.container header ul li .downdropc .log,
+.container header ul li .downdropc .log:hover{
+    border-top: #c8c8c8 solid 1px;
+}
+.container header ul li .downdropc a:hover{
+    background-color: #e8f2f6;
+    border: none;
+    color:#333;
+}
+
 .container .page{
     display: flex;
     align-items: center;

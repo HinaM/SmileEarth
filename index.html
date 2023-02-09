@@ -42,9 +42,16 @@
                     <li><a href="#" class="no">首頁</a></li>
                     <li><a href="./resume.html">我的履歷</a></li>
                     <li><a href="./learning.html">學習活動</a></li>
-                    <li>
-                        <img src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                    <li class="downdrop">
+                        <img src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" onclick="nav();">
+                        <div class="downdropc" id="downdropc">
+                                <a href="#"><p>基本資料</p></a>
+                                <a href="#"><p>我的活動</p></a>
+                                <a href="#"><p>我的收藏</p></a>
+                                <a href="#" class="log"><p>登出</p></a>
+                        </div>
                     </li>
+                    
                 </ul>
             </div>
         </header>
@@ -355,6 +362,14 @@
             hide.style.display = "none";
         } else {
             hide.style.display = "block";
+        }
+    }
+    var downdropc = document.getElementById("downdropc");
+    function nav(){
+        if (downdropc.style.display == "flex"){
+            downdropc.style.display = "none";
+        }else{
+            downdropc.style.display = "flex";
         }
     }
 </script>

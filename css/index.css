@@ -242,7 +242,7 @@ body{
     font-size: 12px;
 }
 .container header ul li .downdropc{
-    width: 300%;
+    width: 250%;
     position: absolute;
     background-color: #fff;
     z-index: 100;

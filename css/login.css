@@ -19,7 +19,9 @@ span::selection,
 a::selection,
 li::selection,
 button::selection,
-img::selection{
+img::selection,
+legend::selection,
+input::selection{
     background: lightblue;
 }
 html{

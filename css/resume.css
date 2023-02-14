@@ -469,8 +469,12 @@ body{
     display: flex;
     justify-content: space-between;
 }
-.container .page .my .re .ee .con .imgedit{
+.container .page .my .re .ee .con label{
     width: 45%;
+    cursor: pointer;
+}
+.container .page .my .re .ee .con .imgedit{
+    width: 100%;
     height: 180px;
     background-color: #d9d9d9;
     border:2px #202020 dotted;

@@ -184,16 +184,16 @@ legend{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .container .page .form .formm label{
-    width: 100%;
+    width: fit-content;
     display: flex;
     flex-direction: row;
     text-align: center;
     font-size: 13px;
     margin-left: 10px;
+    cursor: pointer;
 }
 .container .page .form .formm label i{
     padding-top: 4px;
-    cursor: pointer;
 }
 .container .page .form .formm input[type = "checkbox"]{
     display: none;

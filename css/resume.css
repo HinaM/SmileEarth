@@ -370,19 +370,31 @@ body{
 .container .page .pro .myre h3{
     color: #858585;
 }
-.container .page .my{
+.container .page .m{
     width: 60%;
+    height: fit-content;
+}
+.container .page .m .my{
+    width: 100%;
     height: fit-content;
     border-radius: 1rem;
     background-color: #fff;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.31);
+    margin-bottom: 20px;
+}
+.container .page .my .year{
+    padding: 10px 30px;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.31);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .container .page .my .me{
     width: 100%;
     min-height: 150px;
     background-color: #e8f2f6;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+    border-radius: 1rem;
     display: flex;
     padding: 20px 40px;
     overflow: hidden;
@@ -445,7 +457,7 @@ body{
     width: 85%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 .container .page .my .re .ee .y{
     display: flex;
@@ -500,7 +512,7 @@ body{
     justify-content: center;
 }
 .container .page .my .re .myF .go.end{
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 .container .page .my .re .myF .go i,
 .container .page .my .ee .myF .go i{

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/register.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9d0690b173.js" crossorigin="anonymous"></script>
     <title>ESG學利網</title>
@@ -25,40 +25,40 @@
                 <div class="cir c2"></div>
                 <div class="cir c3"></div>
                 <div class="formm f1">
-                    <h1>LOGIN</h1>
-                    <p style="margin-bottom: 10px;">使用第三方帳號登入「ESG學利網」</p>
-                    <div class="fon">
-                        <p><i class="fa-brands fa-google" style="color:#eb5346;font-size:20px;"></i> 以Google帳號登入</p>
-                    </div>
-                    <div class="fon">
-                        <p><i class="fa-brands fa-facebook" style="color: #1977f3;font-size:20px;"></i> 以Facebook帳號登入</p>
-                    </div>
-                </div>
-                <fieldset>
-                    <legend>or</legend>
-                </fieldset>
-                <div class="formm f2">
-                    <p style="margin-bottom: 10px;">使用會員資訊登入「ESG學利網」</p>
-                    <input type="text" name="" id="emaill" placeholder="請輸入您的使用者名稱/電子信箱">
-                    <input type="password" name="" id="psdd" placeholder="請輸入密碼">
-                    <div style="width: 100%;">
-                        <label onclick="showpsd();">
-                            <input type="checkbox" id="psd">
-                            <p><i class="fa-regular fa-square" id="psdicon"></i> 顯示密碼</p>
+                    <h1>REGISTER</h1>
+                    <p class="ti">使用者名稱<span style="color: red;">*</span></p>
+                    <input type="text" id="username" placeholder="請輸入您的使用者名稱">
+                    <p class="ti">密碼<span style="color: red;">*</span></p>
+                    <input type="password" id="psdd" placeholder="英文大小寫及數字共8～20個字符內">
+                    <p class="ti">確認密碼<span style="color: red;">*</span></p>
+                    <input type="password" id="repsdd" placeholder="再次輸入您所設定的密碼">
+                    <p class="ti">電子信箱<span style="color: red;">*</span></p>
+                    <input type="text" id="emaill" placeholder="輸入您最常使用的電子信箱">
+                    <p class="ti">手機號碼<span style="color: red;">*</span></p>
+                    <input type="text" id="phone" placeholder="輸入您的手機號碼">
+                    <div style="width: 100%;margin-top: 15px;">
+                        <label onclick="eok();">
+                            <input type="checkbox" id="emailok">
+                            <p><i class="fa-regular fa-square" id="eokicon"></i> 我願意以email接收「ESG學利網」的新消息</p>
                         </label>
                     </div>
-                    <a href="#"><p>忘記密碼？</p></a>
-                    
-                    <div class="fon log" onclick="logincheck();">
-                        <p>登入</p>
+                    <div style="width: 100%;margin-bottom: 5px;">
+                        <label onclick="uok();">
+                            <input type="checkbox" id="useok">
+                            <p><i class="fa-regular fa-square" id="uokicon"></i> 我已詳閱「ESG學利網」之使用條款</p>
+                        </label>
                     </div>
-                    <a href="./register.html" style="text-decoration: none;">
+                    <div class="fon log" onclick="logincheck();start();">
+                        <p>註冊</p>
+                    </div>
+                    <a href="./login.html" style="text-decoration: none;">
                         <div class="fon for">
-                            <p>沒有帳號嗎？馬上註冊</p>
+                            <p>已經有帳號了嗎？點我登入</p>
                         </div>
                     </a>
-                    
                 </div>
+                
+                
             </div>
             <div class="imgg">
                 <img src="./img/Frame 124.png" alt="">
@@ -109,6 +109,23 @@
         <div id="myBtn">
             <a href="#"><i class="fa-solid fa-chevron-up"></i></a>
         </div>
+        <div class="modal2" id="modal2">
+            <div class="modal_root2">
+                <div class="fo">
+                    <h2 style="color: #3d5ac1;margin-top: 5px;margin-bottom: 10px;"><i class="fa-solid fa-circle-info"></i> 電子郵件確認</h2>
+                    <h4 style="margin-bottom: 10px;">我們已將確認註冊電子郵件寄送至「<span id="evalue"></span>」，確認後帳號即可使用。</h4>    
+                    <h4 style="color: #3d5ac1;margin-bottom: 5px;">若信箱裡沒有確認信件，請確認您的垃圾信件匣是否有我們的通知信！</h4>                 
+                </div>
+                <div class="gogo">
+                    <div class="no" onclick="window.location = './login.html'">
+                        <p>取消</p>
+                    </div>
+                    <div class="yes" id="yes">
+                        <p>重新寄送（<span id="timer"></span>）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script>
@@ -125,26 +142,65 @@
     window.addEventListener('load',function(){
         preload.style.display = "none";
     })
-    
+    var emailok = document.getElementById("emailok");
+    var useok = document.getElementById("useok");
+    var eokicon = document.getElementById("eokicon");
+    var uokicon = document.getElementById("uokicon");
+    function eok(){
+        if (emailok.checked == true){
+            eokicon.className = "fa-solid fa-square-check";
+        }else{
+            eokicon.className = "fa-regular fa-square";
+        }
+    }
+    function uok(){
+        if (useok.checked == true){
+            uokicon.className = "fa-solid fa-square-check";
+        }else{
+            uokicon.className = "fa-regular fa-square";
+        }
+    }
+    var username = document.getElementById("username");
+    var phone = document.getElementById("phone");
     var psd = document.getElementById("psd");
     var emaill = document.getElementById("emaill");
     var psdd = document.getElementById("psdd");
+    var repsdd = document.getElementById("repsdd");
     var psdicon = document.getElementById("psdicon");
     function showpsd(){
         if (psd.checked == true){
             psdicon.className = "fa-solid fa-square-check";
             psdd.setAttribute("type","text");
+            repsdd.setAttribute("type","text");
         }else{
             psdicon.className = "fa-regular fa-square";
             psdd.setAttribute("type","password");
+            repsdd.setAttribute("type","password");
         }
     }
+    
+   var evalue = document.getElementById("evalue");
     function logincheck(){
-        if (emaill.value == "" || psdd.value == ""){
-            alert("請輸入有效帳號或密碼。");
+        if (emaill.value == "" || psdd.value == "" || username.value == "" || repsdd.value == "" || phone.value == ""){
+            alert("請確認*註記之空格已確實填寫。");
         }else{
-            window.location = "./index.html";
+            modal2.classList.add("active");
+            evalue.innerHTML = emaill.value;
         }
+    }
+    function start(){
+        var timer = document.getElementById("timer");
+        var number = 5;
+        setInterval(function(){
+            number -- ;
+            if(number <= 0 ){
+                number = 0;
+                document.getElementById("yes").style.backgroundColor="rgb(61, 90, 193)";
+                document.getElementById("yes").style.cursor="pointer";
+            }
+            
+            timer.innerText =  number + 0 }, 1000);
+            
     }
 </script>
 </html>

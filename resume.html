@@ -601,10 +601,18 @@
             hid2.style.transform = "rotate(0)";
         }
     }
-    addd1 = document.getElementById("addd1");
+
+    var addd1 = document.getElementById("addd1");
     addd1.onclick = function(){
         const para = document.createElement("div");
-        para.innerHTML = "<div class='ae'><div class='ti'><h2 class='myP' style='margin-bottom: 5px;border:2px #202020 dotted;background:#fff;padding: 2px 3px;outline:none;' contentEditable>關鍵反思</h2><h2 class='myFL' style='color:#d40f0f;cursor: pointer;' onclick='myFunction123();'><i class='fa-solid fa-trash'></i></h2></div><p class='myP' style='border:2px #202020 dotted;background:#fff;padding: 2px 3px;outline:none;' contentEditable>請輸入關鍵反思內容</div>";
+        para.innerHTML = "\
+        <div class='ae'>\
+            <div class='ti'>\
+                <h2 class='myP' style='margin-bottom: 5px;border:2px #202020 dotted;background:#fff;padding: 2px 3px;outline:none;' contentEditable>關鍵反思</h2>\
+                <h2 class='myFL' style='color:#d40f0f;cursor: pointer;' onclick='myFunction123();'><i class='fa-solid fa-trash'></i></h2>\
+            </div>\
+            <p class='myP' style='border:2px #202020 dotted;background:#fff;padding: 2px 3px;outline:none;' contentEditable>請輸入關鍵反思內容\
+        </div>";
         document.getElementById("myDIV").appendChild(para);
     }
     addd2 = document.getElementById("addd2");

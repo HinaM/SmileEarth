@@ -178,16 +178,24 @@
             repsdd.setAttribute("type","password");
         }
     }
-    
-   var evalue = document.getElementById("evalue");
+
+    var evalue = document.getElementById("evalue");
     function logincheck(){
+        //當必填空格出現空值
         if (emaill.value == "" || psdd.value == "" || username.value == "" || repsdd.value == "" || phone.value == ""){
             alert("請確認*註記之空格已確實填寫。");
-        }else{
+        }
+        //當確認密碼不一致
+        else if(psdd.value !== repsdd.value){
+            alert("確認密碼不一致，請重新輸入。");
+        }
+        else{
             modal2.classList.add("active");
             evalue.innerHTML = emaill.value;
         }
     }
+    
+
     function start(){
         var timer = document.getElementById("timer");
         var number = 5;

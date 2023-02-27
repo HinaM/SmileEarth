@@ -156,7 +156,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
 
         <!--footer-->
@@ -207,6 +206,42 @@
     </div>
 
 
+    <!--刪除google連動區塊-->
+    <div class="modal" id="modal">
+        <div class="modalin">
+            <div class="wo">
+                <h2 style="color: #d40f0f;"><i class="fa-sharp fa-solid fa-circle-exclamation"></i> 取消帳號連動</h2>
+                <p style="margin: 10px 10px 0px 10px;">是否要取消「xiaomei123456<br/>@gmail.com」與ESG學利網的連動？</p>
+            </div>
+            <div class="ch">
+                <div class="no" onclick="myFunction789();">
+                    <p>取消</p>
+                </div>
+                <div class="ok" onclick="myFunction123();">
+                    <p>確認送出</p>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <!--刪除fb連動區塊-->
+    <div class="modal2" id="modal2">
+        <div class="modal2in">
+            <div class="wo">
+                <h2 style="color: #d40f0f;"><i class="fa-sharp fa-solid fa-circle-exclamation"></i> 取消帳號連動</h2>
+                <p style="margin: 10px 10px 0px 10px;">是否要取消「陳小美」與ESG學利網的連動？</p>
+            </div>
+            <div class="ch">
+                <div class="no" onclick="myFunction7892();">
+                    <p>取消</p>
+                </div>
+                <div class="ok" onclick="myFunction1232();">
+                    <p>確認送出</p>
+                </div>
+            </div>
+        </div> 
+    </div>
+
 
 </body>
 <script>
@@ -235,8 +270,7 @@
             gogo.className = "gogolink";
             gogop.innerHTML = "<i class='fa-brands fa-google' style='color:#eb5346;font-size:20px;'></i> 已與「xiaomei123456@gmail.com」連動";
         }else{
-            gogo.className = "gogo";
-            gogop.innerHTML = "<i class='fa-brands fa-google' style='color:#eb5346;font-size:20px;'></i> 以Google帳號進行連動";
+            myFunction456();
         }
     }
 
@@ -245,9 +279,34 @@
             gogo2.className = "gogo2link";
             gogo2p.innerHTML = "<i class='fa-brands fa-facebook' style='color: #1977f3;font-size:20px;'></i> 已與「陳小美」連動";
         }else{
-            gogo2.className = "gogo2";
-            gogo2p.innerHTML = "<i class='fa-brands fa-facebook' style='color: #1977f3;font-size:20px;'></i> 以Facebook帳號進行連動";
+            myFunction4562();
         }
+    }
+
+    var modal = document.getElementById("modal");
+    function myFunction456(){
+        modal.classList.add("active");
+    }
+    function myFunction789(){
+        modal.classList.remove("active");
+    }
+    function myFunction123(){
+        modal.classList.remove("active");
+        gogo.className = "gogo";
+        gogop.innerHTML = "<i class='fa-brands fa-google' style='color:#eb5346;font-size:20px;'></i> 以Google帳號進行連動";
+    }
+
+    var modal2 = document.getElementById("modal2");
+    function myFunction4562(){
+        modal2.classList.add("active");
+    }
+    function myFunction7892(){
+        modal2.classList.remove("active");
+    }
+    function myFunction1232(){
+        modal2.classList.remove("active");
+        gogo2.className = "gogo2";
+        gogo2p.innerHTML = "<i class='fa-brands fa-facebook' style='color: #1977f3;font-size:20px;'></i> 以Facebook帳號進行連動";
     }
 </script>
 </html>

@@ -511,3 +511,61 @@ body{
     background-color: #d40f0f;
     color: #fff;
 }
+.modal,
+.modal2{
+    position: absolute;
+    top: -100%;
+    transition: 0.5s;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    background-color: #c6c6c655;
+}
+.modal.active,
+.modal2.active{
+    position: fixed;
+    top: 0;
+}
+.modal .modalin,
+.modal2 .modal2in{
+    width: 20%;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 1rem;
+}
+.modal .modalin .wo,
+.modal2 .modal2in .wo{
+    padding: 20px;
+}
+.modal .modalin .ch,
+.modal2 .modal2in .ch{
+    width: 100%;
+    display: flex;
+}
+.modal .modalin .ch .no,
+.modal2 .modal2in .ch .no{
+    width: 50%;
+    background-color: #c6c6c6;
+    border-bottom-left-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 15px 0;
+}
+.modal .modalin .ch .ok,
+.modal2 .modal2in .ch .ok{
+    width: 50%;
+    background-color: #d40f0f;
+    border-bottom-right-radius: 1rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 15px 0;
+}
